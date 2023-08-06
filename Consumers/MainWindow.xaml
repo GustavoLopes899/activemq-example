@@ -1,0 +1,50 @@
+﻿<Window x:Class="ActiveMQConsumers.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:ActiveMQConsumers.VM"
+        mc:Ignorable="d"
+        Title="ActiveMQ Consumers" Height="450" Width="1024"
+        d:DataContext="{d:DesignInstance Type=vm:MainWindowVM }">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="AUTO"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Text="Queue 1" HorizontalAlignment="Center"/>
+            <ListBox Grid.Row="1" x:Name="Queue1"/>
+        </Grid>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="AUTO"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Text="Queue 2" HorizontalAlignment="Center"/>
+            <ListBox Grid.Row="1" x:Name="Queue2" ItemsSource="{Binding ActiveMQMyConsumers.Queue2}" />
+        </Grid>
+        <Grid Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="AUTO"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Text="Queue 3" HorizontalAlignment="Center"/>
+            <ListBox Grid.Row="1" x:Name="Queue3" ItemsSource="{Binding ActiveMQMyConsumers.Queue3}"/>
+        </Grid>
+        <Grid Grid.Column="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="AUTO"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Text="Topic" HorizontalAlignment="Center"/>
+            <ListBox Grid.Row="1" x:Name="Topic" ItemsSource="{Binding ActiveMQMyConsumers.Topic}"/>
+        </Grid>
+    </Grid>
+</Window>
