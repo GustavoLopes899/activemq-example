@@ -34,7 +34,7 @@
             <ComboBoxItem Name="Queue3">Queue3</ComboBoxItem>
             <ComboBoxItem Name="Topic">Topic</ComboBoxItem>
         </ComboBox>
-        <Button Grid.Row="4" Grid.Column="2" Content="Enviar" FontSize="20" Margin="5" Command="{Binding Send}">
+        <Button Grid.Row="4" Grid.Column="2" Content="Send" FontSize="20" Margin="5" Command="{Binding Send}">
             <Button.CommandParameter>
                 <MultiBinding Converter="{StaticResource ParameterConverter}">
                     <Binding Path="Text" ElementName="messageBox"/>
